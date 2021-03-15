@@ -16,35 +16,24 @@ with open(sys.argv[1]) as file:
 
 # Loading sequence from TXT file into memory as String
 with open(sys.argv[2]) as file:
-    for text in file:
-        dna = text
+    dna = file.read()
 
-# Making Dictionary for dna_strs and setting their values to 0
-dna_strs = {}
-for person in people:
-    for key in person:
-        if key != 'name':
-            dna_strs[key] = 0
-    break
+# Making Dictionary for dna_strs
+dna_strs = people[0].copy()
+dna_strs.pop('name')
 
 # Counting longest consecutive repeats for dna_strs
 for dna_str in dna_strs:
-    count = 1
-    while True:
-        if count * dna_str in text:
-            count += 1
-            dna_strs[dna_str] += 1
-        else:
-            break
-
+    count = 0
+    while count * dna_str in dna:
+        count += 1
+    dna_strs[dna_str] = str(count - 1)
+    
 # Searching for matching person DNA
 for person in people:
-    found = True
-    for dna_str in dna_strs:
-        if int(person[dna_str]) != dna_strs[dna_str]:
-            found = False
-    if found == True:
+    if all(person.get(key, None) == val for key, val in dna_strs.items()): 
         print(person['name'])
         sys.exit()
+        
 print("No match")
 
