@@ -19,8 +19,7 @@ with open(sys.argv[2]) as file:
     dna = file.read()
 
 # Making Dictionary for dna_strs
-dna_strs = people[0].copy()
-dna_strs.pop('name')
+dna_strs = {key: 0 for key in people[0].keys() if key != 'name'}
 
 # Counting longest consecutive repeats for dna_strs
 for dna_str in dna_strs:
