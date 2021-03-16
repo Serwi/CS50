@@ -18,7 +18,8 @@ with open(sys.argv[1]) as file:
 with open(sys.argv[2]) as file:
     dna = file.read()
 
-# Making Dictionary for dna_strs
+# Making Dictionary for dna_strs from first dictionary from people list to use its keys that are made of sequence
+# of molecules in counting their consecutive repeats in DNA.
 dna_strs = {key: 0 for key in people[0].keys() if key != 'name'}
 
 # Counting longest consecutive repeats for dna_strs
