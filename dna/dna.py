@@ -23,7 +23,10 @@ dna_strs = {key: 0 for key in people[0].keys() if key != 'name'}
 
 # Counting longest consecutive repeats for dna_strs
 for dna_str in dna_strs:
-    dna_strs[dna_str] = str(*[i for i in range(len(dna)) if dna_str * i in dna and dna_str * (i + 1) not in dna])
+    count = 0
+    while count * dna_str in dna:
+        count += 1
+    dna_strs[dna_str] = str(count - 1)
     
 # Searching for matching person DNA
 for person in people:
