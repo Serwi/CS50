@@ -1,8 +1,6 @@
 import sys
 import csv
 
-from cs50 import get_string
-
 # Checking for correct number of command-line arguments
 if len(sys.argv) != 3:
     sys.exit("Usage: python dna.py data.csv sequence.txt")
