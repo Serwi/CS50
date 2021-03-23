@@ -5,8 +5,8 @@ import argparse
 from cs50 import get_string
 
 parser = argparse.ArgumentParser(description = 'Identifies a person based on their DNA', usage = 'python dna.py data.csv sequence.txt' )
-parser.add_argument('database', type = str, help = 'CSV file containing STR counts for a list of individuals')
-parser.add_argument('dna_sequence', type = str, help = 'text file containing dna to analyze')
+parser.add_argument('database', help = 'CSV file containing STR counts for a list of individuals')
+parser.add_argument('dna_sequence', help = 'text file containing dna to analyze')
 args = parser.parse_args()
 
 # Loading data from CSV file into memory as List of Dictionaries
