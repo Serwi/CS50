@@ -2,8 +2,6 @@ import sys
 import csv
 import argparse
 
-from cs50 import get_string
-
 parser = argparse.ArgumentParser(description = 'Identifies a person based on their DNA', usage = 'python dna.py data.csv sequence.txt' )
 parser.add_argument('database', help = 'CSV file containing STR counts for a list of individuals')
 parser.add_argument('dna_sequence', help = 'text file containing dna to analyze')
