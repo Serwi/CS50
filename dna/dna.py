@@ -18,7 +18,7 @@ with open(sys.argv[1]) as file:
 with open(sys.argv[2]) as file:
     dna = file.read()
 
-# Making Dictionary for counting strs with only necessary keys from people
+# Making Dictionary for counting STRs with only necessary keys from people
 dna_strs = {key: 0 for key in people[0].keys() if key != 'name'}
 
 # Counting longest consecutive repeats for dna_strs
